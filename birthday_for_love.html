@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17102d" />
+    <title>Happy Birthday, Love ✨</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap");
+      :root {
+        --bg: #100b20;
+        --panel: #1d1534;
+        --lav: #c8a8ff;
+        --pink: #ffb8df;
+        --cream: #fff5ed;
+        --muted: #c5bad8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(ellipse at 15% 5%, #35205a 0, transparent 36%),
+          radial-gradient(ellipse at 90% 30%, #251747 0, transparent 32%),
+          var(--bg);
+        color: var(--cream);
+        font-family: "DM Sans", sans-serif;
+        overflow-x: hidden;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.45;
+        background-image:
+          radial-gradient(2px 2px at 20% 30%, #fff 50%, transparent 60%),
+          radial-gradient(1px 1px at 70% 20%, #e3c8ff 50%, transparent 60%),
+          radial-gradient(2px 2px at 80% 70%, #fff 50%, transparent 60%),
+          radial-gradient(1px 1px at 35% 80%, #e3c8ff 50%, transparent 60%),
+          radial-gradient(1px 1px at 55% 45%, #fff 50%, transparent 60%);
+        background-size: 280px 240px;
+        z-index: -1;
+      }
+      main {
+        width: min(100% - 32px, 900px);
+        margin: auto;
+      }
+      section {
+        padding: 72px 0;
+        text-align: center;
+      }
+      .eyebrow {
+        color: var(--lav);
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+      h1,
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 500;
+        line-height: 1.1;
+      }
+      h1 {
+        font-size: clamp(3.5rem, 12vw, 7.5rem);
+        margin: 20px 0 16px;
+        letter-spacing: -0.055em;
+      }
+      h1 span {
+        display: block;
+        font-style: italic;
+        color: var(--pink);
+      }
+      h2 {
+        font-size: clamp(2.2rem, 7vw, 4rem);
+        margin: 15px 0;
+      }
+      p {
+        line-height: 1.8;
+        color: var(--muted);
+      }
+      .hero {
+        min-height: 95vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 50px;
+        position: relative;
+      }
+      .hero p {
+        max-width: 490px;
+        margin: 0 auto 26px;
+      }
+      .pill {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        border: 1px solid #a98ad94d;
+        background: #ffffff08;
+        padding: 10px 16px;
+        border-radius: 999px;
+        color: #eadcff;
+        font-size: 0.8rem;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: 0;
+      }
+      .btn {
+        border-radius: 999px;
+        padding: 14px 22px;
+        background: linear-gradient(135deg, #d9b7ff, #ffb8df);
+        color: #241535;
+        font-weight: 700;
+        box-shadow: 0 8px 30px #d6a5ff20;
+        transition:
+          transform 0.2s,
+          filter 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.06);
+      }
+      .secondary {
+        background: #ffffff0b;
+        color: var(--cream);
+        border: 1px solid #c8a8ff55;
+        box-shadow: none;
+      }
+      .scroll {
+        margin-top: 54px;
+        color: #a99aba;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+      }
+      .card {
+        background: linear-gradient(145deg, #ffffff0c, #ffffff04);
+        border: 1px solid #d7c2ff22;
+        border-radius: 26px;
+        padding: clamp(22px, 5vw, 42px);
+        box-shadow: 0 24px 80px #00000020;
+      }
+      .cake-wrap {
+        margin: 35px auto 20px;
+        max-width: 360px;
+        position: relative;
+        min-height: 250px;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+      }
+      .cake {
+        position: relative;
+        width: 220px;
+        height: 135px;
+        margin-bottom: 18px;
+      }
+      .plate {
+        position: absolute;
+        bottom: 0;
+        left: -28px;
+        width: 276px;
+        height: 18px;
+        border-radius: 50%;
+        background: linear-gradient(#d8c8ed, #8e7ca8);
+        box-shadow: 0 9px 22px #0005;
+      }
+      .layer {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        width: 220px;
+        height: 82px;
+        border-radius: 12px 12px 18px 18px;
+        background: linear-gradient(90deg, #b88be8, #f4c7ff 48%, #bd91ee);
+        box-shadow: inset 0 -10px #8b5cb5;
+      }
+      .layer:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 22px;
+        background: #fff0f8;
+        border-radius: 12px 12px 9px 9px;
+        box-shadow: 0 7px #e3aeea;
+      }
+      .layer:after {
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 20px;
+        width: 16px;
+        height: 25px;
+        border-radius: 0 0 12px 12px;
+        background: #fff0f8;
+        box-shadow:
+          38px 4px #fff0f8,
+          76px -2px #fff0f8,
+          114px 5px #fff0f8,
+          152px -1px #fff0f8;
+      }
+      .candle {
+        position: absolute;
+        z-index: 3;
+        bottom: 105px;
+        left: calc(50% - 5px);
+        width: 10px;
+        height: 45px;
+        border-radius: 4px;
+        background: repeating-linear-gradient(
+          135deg,
+          #fff 0 7px,
+          #d8aaff 7px 13px
+        );
+      }
+      .flame {
+        position: absolute;
+        bottom: 42px;
+        left: -4px;
+        width: 18px;
+        height: 25px;
+        border-radius: 50% 50% 45% 45%;
+        background: radial-gradient(
+          ellipse at 50% 70%,
+          #fff6b7 0 20%,
+          #ffc65c 45%,
+          #ff7a7a 75%
+        );
+        filter: drop-shadow(0 0 12px #ffb86b);
+        animation: flicker 0.7s infinite alternate;
+        transform-origin: bottom;
+      }
+      .flame.off {
+        display: none;
+      }
+      @keyframes flicker {
+        from {
+          transform: rotate(-5deg) scale(0.95);
+        }
+        to {
+          transform: rotate(5deg) scale(1.06);
+        }
+      }
+      .cake-instruction {
+        font-size: 0.85rem;
+        margin: 4px 0 18px;
+      }
+      #cakeMessage {
+        min-height: 52px;
+        color: var(--pink);
+        font-weight: 600;
+      }
+      .jokes {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+        text-align: left;
+      }
+      .joke {
+        border-radius: 18px;
+        padding: 20px;
+        background: #ffffff08;
+        border: 1px solid #d7c2ff1b;
+      }
+      .joke .emoji {
+        font-size: 1.6rem;
+      }
+      .joke p {
+        margin: 7px 0 0;
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+      .reveal-box {
+        margin: 28px auto 0;
+        width: min(100%, 360px);
+        padding: 28px;
+        border: 1px solid #c8a8ff3b;
+        border-radius: 24px;
+        background: #ffffff08;
+      }
+      .gift {
+        font-size: 5rem;
+        display: block;
+        filter: drop-shadow(0 10px 18px #d8aaff22);
+        transition: transform 0.25s;
+      }
+      .reveal-box button:hover .gift {
+        transform: rotate(-7deg) scale(1.08);
+      }
+      #finalMessage {
+        display: none;
+        margin-top: 22px;
+        animation: rise 0.8s both;
+      }
+      #finalMessage.show {
+        display: block;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .final-quote {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        line-height: 1.5;
+        color: #ffe6f5;
+      }
+      footer {
+        text-align: center;
+        padding: 30px 0 55px;
+        color: #9f91b4;
+        font-size: 0.78rem;
+      }
+      .heart {
+        color: var(--pink);
+      }
+      .confetti {
+        position: fixed;
+        top: -20px;
+        width: 9px;
+        height: 13px;
+        z-index: 10;
+        pointer-events: none;
+        animation: fall linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(800deg);
+          opacity: 0.85;
+        }
+      }
+      @media (max-width: 560px) {
+        section {
+          padding: 54px 0;
+        }
+        .hero {
+          min-height: 92vh;
+        }
+        .jokes {
+          grid-template-columns: 1fr;
+        }
+        .cake-wrap {
+          transform: scale(0.92);
+          margin-top: 15px;
+        }
+        .card {
+          border-radius: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero" id="top">
+        <div class="pill">✦ a tiny universe made just for you ✦</div>
+        <div class="eyebrow" style="margin-top: 34px">
+          TODAY'S MAIN CHARACTER
+        </div>
+        <h1>Happy Birthday,<span>Love ✨</span></h1>
+        <p>
+          One whole day dedicated to celebrating your big head, you this big
+          girl small girl of yesterday🤧🤧
+        </p>
+        <button
+          class="btn"
+          onclick="
+            document
+              .querySelector('#cakeSection')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          Your birthday surprise ↓
+        </button>
+        <div class="scroll">SCROLL DOWN, BIRTHDAY GIRL ✦</div>
+      </section>
+
+      <section id="cakeSection">
+        <div class="eyebrow">01 · MAKE A WISH</div>
+        <h2>A cake, just for you 🎂</h2>
+        <p>
+          Close your eyes, make a wish, then tap the button to blow out your
+          candle.<br />(Wish for Jammy jamjam to have plenty money so he can
+          take you to eat amala everyday, with 3 big goat meat and clear all
+          that thing in that temu cart)
+        </p>
+        <div class="card">
+          <div
+            class="cake-wrap"
+            aria-label="A purple birthday cake with one candle"
+          >
+            <div class="cake">
+              <div class="candle"><div class="flame" id="flame"></div></div>
+              <div class="layer"></div>
+              <div class="plate"></div>
+            </div>
+          </div>
+          <div class="cake-instruction">🕯️ One candle. A million wishes.</div>
+          <button class="btn" id="blowBtn" onclick="blowCandles()">
+            💨 Blow out the candle!
+          </button>
+          <p id="cakeMessage" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="roast">
+        <div class="eyebrow">02 · FRIENDSHIP DISCLAIMER</div>
+        <h2>Things we must address… 💀</h2>
+        <p>
+          Because what is friendship without love, laughter, and unnecessary
+          bullying?
+        </p>
+        <div class="jokes">
+          <div class="joke">
+            <div class="emoji">👑</div>
+            <strong>Professional drama queen</strong>
+            <p>
+This one actually ehn i still dont know, e dey be like film😂 her emotions dey explode ehn 
+            </p>
+          </div>
+          <div class="joke">
+            <div class="emoji">🙂</div>
+            <strong>"Big" girl</strong>
+            <p>
+              Talllest, you black pass me shey you sabi?
+            </p>
+          </div>
+          <div class="joke">
+            <div class="emoji">💰💰</div>
+            <strong>Nepo baby</strong>
+            <p>
+  The one, The only, The one and only Nepoooooo.
+  But me and her don broke now 
+            </p>
+          </div>
+          <div class="joke">
+            <div class="emoji">🫶</div>
+            <strong>Troublesome but irreplaceable</strong>
+            <p>
+              You're actually a lovely human being. Don't let this compliment
+              get to your head, please.
+            </p>
+          </div>
+        </div>
+        <p style="font-size: 0.78rem; margin-top: 18px">
+          *All allegations are made with affection.*
+        </p>
+      </section>
+
+      <section id="surprise">
+        <div class="eyebrow">03 · YOUR FINAL SURPRISE</div>
+        <h2>Okay, one last thing…</h2>
+        <p>
+          There's a little birthday message waiting for you. Go on, open it. 💌
+        </p>
+        <div class="reveal-box">
+          <button
+            class="btn secondary"
+            onclick="openGift()"
+            id="giftBtn"
+            style="width: 100%"
+          >
+            <span class="gift" id="giftIcon">🎁</span>
+            <span>Tap to open your gift</span>
+          </button>
+          <div id="finalMessage">
+            <div style="font-size: 2rem">💜✨🎉</div>
+            <p class="final-quote">
+              Happy birthday, Olayanju Love Erioluwa Ayla!
+            </p>
+            <p>
+              The girl they call love hmmmm😂😂, this name has brought about
+              many things, the love I was searching for… was looking me right in
+              the eyeeeeee ohhhhhhohhhhhhh,I don’t even know how old you are
+              turning 🤧 I think it’s what like 13 years old small girl of
+              yesterday she don turn big girl, this might be the first time I’m
+              wishing you a happy birthday cause I’ve never really known the
+              date before might as well go in with a big banggg( imagine the
+              bang sound ‼️💥 ). Ayla you’ve been an amazing person right from
+              when I met you, when I was still thinking you was a 😭 kid that
+              got lost in the wrong continent I mean the accent is really good
+              yeah, and you are still an amazing person with a touch of werey
+              now that you’ve been revealing yourself to me,there’s been a lot
+              of wonderful moments with you ( the day I massaged her hand
+              forever etched in my heart)😂😂 and I’m not saying I’m a bully but
+              teasing you is always quite fun 😭 seeing you tryna throw a little
+              tantrum, then there’s aunty’s love for amala which she has been so
+              much trying to push me to restaurant, I haven’t even figured out
+              what nickname to call you and you’ve given quite a very cute
+              one😭, I’m smiling like an idiot writing this btw😂😂, I'm just writing anything at this point😭,
+               I don’treally know how this epistle things work 🤧 manage am abeg you go teach me 
+            </p>
+            <p>
+              Thank you for being the wonderfully chaotic person you are. Life
+              would be considerably less entertaining without you, and honestly,
+              who else would I bully like this? 😭
+            </p>
+            <p></p>
+            <p style="color: var(--pink); font-weight: 700">
+              I hope this new chapter brings you genuine happiness, beautiful ,
+              peace of mind, and so many reasons to laugh until your stomach
+              hurts. You deserve the sweetest things life has to offer. Have the
+              BEST birthday ever. 🥳💜
+            </p>
+            <p style="font-size: 0.8rem">
+              With love, from your favourite headache. 🤝
+            </p>
+          </div>
+        </div>
+        <div style="margin-top: 30px">
+          <button class="btn" onclick="celebrate()">🎉 Celebrate again!</button>
+        </div>
+      </section>
+      <footer>
+        <span
+          class="heart"
+          >Happy birthday, Love 💜</span
+        >
+      </footer>
+    </main>
+    <script>
+      let blown = false,
+        opened = false;
+      function confettiBurst(count = 140) {
+        const colors = [
+          "#c8a8ff",
+          "#ffb8df",
+          "#ffe5a3",
+          "#b7f7e4",
+          "#ffffff",
+          "#b9c8ff",
+        ];
+        for (let i = 0; i < count; i++) {
+          const el = document.createElement("i");
+          el.className = "confetti";
+          el.style.left = Math.random() * 100 + "vw";
+          el.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+          el.style.animationDuration = 2.5 + Math.random() * 3 + "s";
+          el.style.animationDelay = Math.random() * 0.7 + "s";
+          el.style.width = 5 + Math.random() * 7 + "px";
+          el.style.height = 7 + Math.random() * 10 + "px";
+          el.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+          document.body.appendChild(el);
+          setTimeout(() => el.remove(), 6500);
+        }
+      }
+      function blowCandles() {
+        if (blown) {
+          document.getElementById("cakeMessage").textContent =
+            "Your wish is already on its way. Believe in a little magic. ✨";
+          return;
+        }
+        blown = true;
+        document.getElementById("flame").classList.add("off");
+        document.getElementById("blowBtn").textContent = "✨ Wish sent!";
+        document.getElementById("cakeMessage").textContent =
+          "WISH GRANTED… loading Amala for you with Gbegiri, 2 Shaki and 2 Goat meat! 😂";
+        confettiBurst(90);
+      }
+      function openGift() {
+        if (opened) return;
+        opened = true;
+        document.getElementById("giftIcon").textContent = "💝";
+        document
+          .getElementById("giftBtn")
+          .querySelector("span:last-child").textContent = "Gift opened!";
+        document.getElementById("finalMessage").classList.add("show");
+        confettiBurst(180);
+      }
+      function celebrate() {
+        confettiBurst(180);
+      }
+    </script>
+  </body>
+</html>
